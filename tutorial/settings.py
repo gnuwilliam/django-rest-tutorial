@@ -58,7 +58,7 @@ WSGI_APPLICATION = 'tutorial.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'database.sql'),
+        'NAME': os.path.join(BASE_DIR, 'snippets.db'),
         'USER': '',
         'PASSWORD': '',
         'HOST': '',
