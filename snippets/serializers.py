@@ -33,3 +33,4 @@ class SnippetSerializer(serializers.ModelSerializer):
 
         # Create new instance
         return Snippet(**attrs)
+        
