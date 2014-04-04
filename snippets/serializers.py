@@ -6,7 +6,7 @@ class SnippetSerializer(serializers.ModelSerializer):
     class Meta:
         model   = Snippet
         fields  = ('id', 'title', 'code', 'linenos', 'language', 'style')
-        
+
     pk         = serializers.Field() # Note: `Field` is an untyped read-only field.
     title      = serializers.CharField(required=False,max_length=100)
     code       = serializers.CharField(widget=widgets.Textarea,max_length=100000)
@@ -33,4 +33,4 @@ class SnippetSerializer(serializers.ModelSerializer):
 
         # Create new instance
         return Snippet(**attrs)
-        
+
