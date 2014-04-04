@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from snippets.models import Snippet
 from snippets.serializers import SnippetSerializer
 
+
 @api_view(['GET', 'POST'])
 def snippet_list(request, format=None):
     """
@@ -20,13 +21,14 @@ def snippet_list(request, format=None):
         if serializer.is_valid():
             serializer.save()
             return Response(
-                    serializer.data,
-                    status=status.HTTP_201_CREATED
+                serializer.data,
+                status=status.HTTP_201_CREATED
             )
         return Response(
-                serializer.errors,
-                status=status.HTTP_400_BAD_REQUEST
+            serializer.errors,
+            status=status.HTTP_400_BAD_REQUEST
         )
+
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def snippet_detail(request, pk, format=None):
@@ -45,8 +47,8 @@ def snippet_detail(request, pk, format=None):
             serializer.save()
             return Response(serializer.data)
         return Response(
-                serializer.errors,
-                status=status.HTTP_400_BAD_REQUEST
+            serializer.errors,
+            status=status.HTTP_400_BAD_REQUEST
         )
 
     elif request.method == 'DELETE':
